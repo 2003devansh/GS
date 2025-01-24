@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Sidebar from './Sidebar';
 
 const Navbar = () => {
   const socialLinks = [
@@ -11,6 +12,7 @@ const Navbar = () => {
   return (
     <>
       <div className='h-screen py-4 bg-gray-900'>
+        <Sidebar/>
         <div className='wrapper max-w-[1200px] mx-auto flex items-center justify-between'>
           <motion.span
             initial={{ opacity: 0, y: -20 }} 

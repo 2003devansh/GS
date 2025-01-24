@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar'
 const App = () => {
   return (
-    <div className='  min-h-screen font-["Satoshi"] text-white bg-zinc-900 '>
+    <div className=' font-["Satoshi"] text-white bg-zinc-900 '>
       <Navbar />
       
     </div>
