@@ -10,22 +10,34 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='h-screen py-4'>
+      <div className='h-screen py-4 bg-gray-900'>
         <div className='wrapper max-w-[1200px] mx-auto flex items-center justify-between'>
           <motion.span
-          intial={{ opacity: 0, y: 0.5 }}
-          animate={{ opacity: 1, y: 1 }}
-          transition={{duration: 1 }}
-           className="text-2xl font-bold text-white">NITYA</motion.span>
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }}   
+            transition={{ duration: 1 }}     
+            className="text-2xl font-bold text-white"
+          >
+            NITYA
+          </motion.span>
           <div className='socials flex gap-6'>
             {socialLinks.map(({ id, href, src, alt }) => (
-              <a 
-                key={id} 
-                href={href} 
+              <motion.a
+                key={id}
+                href={href}
                 className="hover:scale-110 transition-transform duration-300"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}  
               >
-                <img className="h-auto max-h-10" src={src} alt={alt} />
-              </a>
+                <motion.img
+                  className="h-auto max-h-10"
+                  src={src}
+                  alt={alt}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: id * 0.2 }} 
+                />
+              </motion.a>
             ))}
           </div>
         </div>
